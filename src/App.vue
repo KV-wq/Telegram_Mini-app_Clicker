@@ -4,7 +4,11 @@
   </div>
   <main class="game" v-if="loaded">
     <div class="page">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
     <TheMenu />
   </main>

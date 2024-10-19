@@ -8,6 +8,7 @@
         aria-hidden="true"
       ></i>
     </RouterLink>
+
     <RouterLink to="/friends" custom v-slot="{ isActive, navigate }">
       <i
         class="menu-button fa fa-users"
