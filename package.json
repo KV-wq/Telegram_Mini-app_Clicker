@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.5",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "pinia": "^2.1.7",

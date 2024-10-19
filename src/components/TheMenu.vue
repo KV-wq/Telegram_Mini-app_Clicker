@@ -2,7 +2,7 @@
   <div class="menu">
     <RouterLink to="/" custom v-slot="{ isActive, navigate }">
       <i
-        class="menu-button fa fa-bullseye"
+        class="menu-button fa fa-ils"
         :class="{ active: isActive }"
         @click="navigate"
         aria-hidden="true"
@@ -27,7 +27,3 @@
     </RouterLink>
   </div>
 </template>
-
-<script>
-import { RouterLink } from 'vue-router'
-</script>

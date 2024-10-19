@@ -1,5 +1,8 @@
 import { defineStore } from "pinia";
 import debounce from "lodash.debounce";
+import { updateUserScore } from "@/api/app";
+
+const debounceUpdateUserScore = debounce(updateUserScore, 1000);
 
 const baseLevelScore = 25;
 
@@ -47,6 +50,7 @@ export const useScoreStore = defineStore("score", {
   actions: {
     add(score = 1) {
       this.score += score;
+      debounceUpdateUserScore(this.score);
     },
     setScore(score) {
       this.score = score;

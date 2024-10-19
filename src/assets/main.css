@@ -56,6 +56,7 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  border: 5px solid #2e2b21;
   box-shadow: 0px 0px 16px 0px rgba(138, 143, 254, 0.05);
   transition: transform 0.2s ease;
   --tiltX: 0deg;
@@ -76,8 +77,8 @@ body {
   font-family: Inter;
   text-shadow: 0px 0px 4px rgba(234, 182, 64, 0.25);
   font-size: 24px;
-  font-weight: 800;
-  background: linear-gradient(180deg, #e8c547 0%, #ef882b 100%);
+  font-weight: 900;
+  background: linear-gradient(180deg, #f4e300 0%, #ff7700 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -91,24 +92,26 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
+  margin-left: 20px;
+  margin-right: 20px;
   bottom: 0;
   left: 1rem;
   right: 1rem;
   justify-content: space-around;
   height: 60px;
-  border-radius: 20px;
+  border-radius: 12px;
   font-size: 1.5rem;
 }
 
 .menu-button {
   color: #4e4d52;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.5s;
 }
 
 .menu-button:hover,
 .menu-button.active {
-  color: #fff;
+  color: #232cce;
   cursor: pointer;
 }
 /* === /NEW === */
@@ -187,7 +190,25 @@ body {
 
 .list {
 }
-
+.loading_container {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.loading {
+  width: 70px;
+  animation: 3s infinite spin linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .list-item {
   background: #2a292e;
   display: flex;
@@ -196,19 +217,21 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .list-btn {
   background: #fff;
   color: #000;
   border-radius: 20px;
-  padding: 0 0.5rem;
+  padding: 0.3rem 0.5rem;
   text-decoration: none;
   margin-left: 1rem;
 }
 
 .list-btn.done {
-  background: #008800;
+  background: #02c3a2;
   color: #fff;
 }
 
@@ -221,13 +244,21 @@ body {
     rgba(95, 2, 225, 1) 24%,
     rgba(0, 212, 255, 1) 100%
   );
+  transition: all ease-in 0.2s;
   color: white;
   font-weight: 700;
   border: none;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1.05);
+  }
 }
 
 .center {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
