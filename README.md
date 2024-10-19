@@ -1,1 +1,1 @@
-# Lizzard Clicker!
+# Clicker
