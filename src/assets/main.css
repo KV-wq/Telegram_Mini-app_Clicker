@@ -62,7 +62,6 @@ body {
   --tiltX: 0deg;
   --tiltY: 0deg;
   transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
-  user-drag: none;
   -webkit-user-drag: none;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -107,6 +106,7 @@ body {
   color: #4e4d52;
   cursor: pointer;
   transition: color 0.5s;
+  -webkit-user-drag: none;
 }
 
 .menu-button:hover,
@@ -188,8 +188,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.list {
-}
 .loading_container {
   width: 100vw;
   height: 100vh;

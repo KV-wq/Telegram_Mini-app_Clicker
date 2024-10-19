@@ -52,18 +52,15 @@ export async function registerRef(userName, refId) {
 }
 
 export async function completeTask(user, task) {
-  await supabase
-    .from("users")
-    .update({
-      tasks: {
-        ...user.tasks,
-        [task.id]: true,
-      },
-      score: newScore,
-    })
-    .eq("telegram", MY_ID);
-
   const score = useScoreStore();
   const newScore = score.score + task.amount;
   score.setScore(newScore);
+
+  await supabase
+    .from("users")
+    .update({
+      tasks: { ...user.tasks, [task.id]: true },
+      score: newScore,
+    })
+    .eq("telegram", MY_ID);
 }
